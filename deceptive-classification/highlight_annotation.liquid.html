@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/text-highlighter/build/TextHighlighter.min.js"></script>
+    <link href="assets/main.css" rel="stylesheet" />
+    <title>highlight_annotation
+    </title>
+</head>
+
+<body>
+    <crowd-form>
+        <div id="errorBox"></div>
+        <full-instructions>
+            <h3>Introduction</h3>
+            <p>Hello~ We are the Information Retrieval Team from the University of Texas at Austin, seeking your help to identify deceptive reviews (i.e., fake comments) from the web. In this study, you will first experience a training session to compare
+                the differences and similarities between deceptive and truthful reviews, then help us to identify unknown reviews. Your learning performance could help us understand how to develop a better human-AI collaborative system to detect deceptive
+                online reviews.</p>
+
+            <h3>Task descriptions</h3>
+            <p>Our tasks contain <b>training sessions</b> and <b>testing sessions</b>. We will first present deceptive and truthful reviews in the training session to let you examine their differences and similarities.</p>
+            <p>In the training session, we need your help to highlight these differences or similarities.</p>
+            <p>In the testing session, we want you to identify unknown reviews, telling us whether they are deceptive or truthful. Both training sessions will take place several times. </p>
+        </full-instructions>
+
+        <short-instructions>
+            <h3>Task descriptions</h3>
+            <p>Hello~ We are the Information Retrieval Team from the University of Texas at Austin, seeking your help to identify deceptive reviews (i.e., fake comments) from the web.</p>
+            <p>Our tasks contain <b>training sessions</b> and <b>testing sessions</b>. We will first present deceptive and truthful reviews in the training session to let you examine their differences and similarities.</p>
+            <p>In the training session, we need your help to highlight these differences or similarities.</p>
+            <p>In the testing session, we want you to identify unknown reviews, telling us whether they are deceptive or truthful. Both training sessions will take place several times. </p>
+            <p>Your learning performance could help us understand how to develop a better human-AI collaborative system to detect deceptive online reviews.</p>
+        </short-instructions>
+
+        <div class="container">
+            <div class="left">
+                <div>
+                    <p>Currently you are in the training session <b>(1/3)</b>. We present a set of hotel reviews that we already know about their authenticity. For a set of 3 reviews, some of them are written by real users (<b>truthful</b>) while the others
+                        are not written by real users (<b>deceptive</b>). You task is to:</p>
+                    <ol>
+                        <li>Read the reviews 👇 </li>
+                        <li>Identify which parts of the review that indicate it as <b>truthful</b> OR <b>deceptive</b>, and</li>
+                        <li>Answer questions on the right 👉 </li>
+                    </ol>
+                </div>
+
+                <div>
+                    <crowd-card>
+                        <div class="card">
+                            <p><b>Review A</b></p>
+                            <div class="labels">
+                                <div><b>Hotel: </b> James</div>
+                                <div><b>Polarity: </b> Negative</div>
+                                <div><b>Deceptive or not: </b> <span class="truthful">Truthful</span></div>
+                            </div>
+                            <p id="originalReview">
+                                In the 100 degree heat of a Chicago summer, it sucks if your air conditioner does not work. After 2 maintenance men attempted to rectify the issue I was offered a portable fan which on low speed sound as if a helicopter was hoovering over my room. I requested
+                                a room change and a not so polite, unsympathetic night front desk attendant stated that was not possible because the hotel was at capacity. Maybe a manager could help me in the morning. The next day went by and no call
+                                was received. At 7pm, I called the front desk. No one was aware of my problem. Approximately 45 minutes later, a manager returned my call and stated a double room was available. I accepted it was glee. Anything was better
+                                than a room that does not cool below 78 degrees in the middle of summer. I was paritally correct. The bathroom door of the new room did not close. Thank god my boyfriend and I are past the shy part of the relationship.
+                                As for room 1618, I believe I was not the first guest to complain about the air conditioner. What's unfortunate is they continued to place guests into this room. And did not offer any reufunds or perks for my sleepless
+                                night in the sauna! This hotel need a major overhaul!!
+                            </p>
+                        </div>
+                    </crowd-card>
+
+                    <div>
+                        <p> 🤔 Given the above review, we find another two reviews that are written in a very similar way, but they are actually <b>Deceptive</b>:</p>
+                    </div>
+
+                    <crowd-card>
+                        <div class="card">
+                            <p><b>Review B</b></p>
+                            <div class="labels">
+                                <div><b>Hotel: </b> Conrad</div>
+                                <div><b>Polarity: </b> Negative</div>
+                                <div><b>Deceptive or not: </b> <span class="deceptive">Deceptive</span></div>
+                            </div>
+                            <p id="comparativeReview">
+                                I had originally chosen the Conrad Chicago Hotel for its location near shopping centers that were within walking distance. However, I later learned that I had made a poor choice. Upon arrival, the lobby seemed nice and we checked in with the clerk. Although,
+                                when we reached out hotel room, we were dissapointed in finding it to be a one-bedroom suite. My family went back down to demand another room with two queen-size beds. The clerk, after a twenty minute waiting period, was
+                                able to find us a suitable room. Upon entering, the room was noticably hot. We turned on the air conditioning, and after waiting for thirty minutes, the room remained muggy and humid. I called the front desk to complain
+                                and ask for a repair man or another room. They promised a repairman within ten minutes. 1 hour later I called again and remined them that the repairman hadn't shown up. They once again promised a speedy repair. While waiting,
+                                I discovered that our room had no soap and the towels were still damp. I called the front lobby and she said that they were sorry for the inconvenience and that there were some more one the first level, but I had to go
+                                get them. After all this trouble, I argued that they should bring it up to me, but in the end, I wound up going to get it myself. After returning to my room and waiting another 30 minutes, the repair man had not shown up.
+                                So I called again, and within 5 minutes the repairman came. He managed to fix the air conditioner, but it was about 12am. We were finally able to get some peace and rest well after the room cooled off, but as the night
+                                went on, we noticed another problem. The air conditioner began to make wretched screeches and banging sounds. It also emitted a strange odor. Upon checking with the front desk, we demanded another room because it was too
+                                late at night to have it repaired. There were not available rooms left, and being so fed up with this hotel's poor service, we promptly left and checked in at a nearby hotel. I don't recommend the Conrad Chicago to anyone
+                                who wants to enjoy their time.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <p><b>Review C</b></p>
+                            <div class="labels">
+                                <div><b>Hotel: </b> Knickerbocker</div>
+                                <div><b>Polarity: </b> Negative</div>
+                                <div><b>Deceptive or not: </b> <span class="deceptive">Deceptive</span></div>
+                            </div>
+                            <p>
+                                I went to stay in the Millenium Hotel Chicago. Now, first, being from rural midwest I was surprised at the price in general, but kind of accepted it when I was assured by my cousin(whom I was visiting in Chicago) said it was normal. So I check in, service
+                                seems fine. I get checked in, room seems ok. A couple of hours later, a lady comes into my room, not a hotel employee, just some lady. Turns out, they cross checked the rooms. We(her and I) went down and complained. Turns
+                                out they double booked the room, not that they were full, but they were full on THAT room type, Standard, as well as the Superior Rooms. Rather than simply upgrade one of us for the mistake they asked which one of us would
+                                like to 'move up'. We argued with them for 20 minutes, they didn't budge, our only option was for one of us to fork over an extra $60 for a Corner Superior. We(the lady, her name was Sharon) decided to split the difference
+                                some, she gave me $20 and I moved. I get to the new room about 20 minutes later, nobody, but Sharon helped me move. I get there, the bed was thrown together, not made, and the bathroom wasn't clean, the garbage had a kleenex
+                                in it(I wasn't going to check if it was used). I called down, it was now 5PM. No answer, I called for 10 minutes and finally got a hold of someone. I told them about the state of my room. They said they would have someone
+                                up 'right away'. I waited 30 minutes and a lady comes in, not in uniform, but she did a hell of a job cleaning. She switched out the garbage, wiped out the whole bathroom, vaccuumed around me, and switched out the bedding,
+                                all told she was in and out in 10 minutes. She didn't say two words to me, but she did clean. I stayed the night and checked out a 7AM and will never go back. Ryan from Iowa
+                            </p>
+                        </div>
+                    </crowd-card>
+                </div>
+            </div>
+
+            <div class="right">
+                <div>
+                    <p>1️⃣ Compared to the review B and C, please highlight texts in the <b>review A</b> that help you differentiate it as actually <span class="truthful">Truthful</span>.</p>
+                    <crowd-button id="removeOriginalReview">Remove</crowd-button>
+                    <crowd-input name='originalReview' id="inputOriginalReview" class="crowdInput"></crowd-input>
+                </div>
+
+                <div>
+                    <p>2️⃣ Compared to the review A, please highlight texts in <b>review B and C</b> that help you differentiate them as actually <span class="deceptive">Deceptive</span>.</p>
+                    <crowd-button id="removeComparativeReview">Remove</crowd-button>
+                    <crowd-input name='comparativeReview' id="inputComparativeReview" class="crowdInput"></crowd-input>
+                </div>
+                <div>
+                    <p>3️⃣ After reading these reviews, on a scale of 1-10, how confident do you think you are able to identify deceptive and truthful reviews?</p>
+                    <crowd-slider name="howMuchConfident" min="1" max="10" step="1" pin="true" editable required></crowd-slider>
+                    <label>(not confident at all: 1 ~ very confident: 10)</label>
+                </div>
+            </div>
+        </div>
+
+    </crowd-form>
+
+    <script>
+        // customize awsui css
+        function css(element, style) {
+            for (const property in style)
+                element.style[property] = style[property];
+        }
+        document.addEventListener('all-crowd-elements-ready', () => {
+            const footer = document
+                .querySelector('crowd-form')
+                .shadowRoot
+                .querySelector('footer')
+
+            css(footer, {
+                // 'z-index': 100,
+                'position': 'fixed'
+            })
+
+            // console.log(footer)
+        });
+
+        // highlight function
+        var hltr_original = new TextHighlighter(document.getElementById('originalReview'))
+        var hltr_comparative = new TextHighlighter(document.getElementById('comparativeReview'))
+        var removeBtn_original = document.getElementById('removeOriginalReview');
+        var removeBtn_comparative = document.getElementById('removeComparativeReview');
+        // console.log(hltr)
+
+        hltr_original.setColor('lightgreen')
+        hltr_comparative.setColor('lightcoral')
+
+        removeBtn_original.addEventListener('click', function() {
+            hltr_original.removeHighlights();
+        });
+
+        removeBtn_comparative.addEventListener('click', function() {
+            hltr_comparative.removeHighlights();
+        });
+
+        document.querySelector('crowd-form').onsubmit = function(e) {
+            var serialized_original = hltr_original.getHighlights()
+            let highlighted_original = []
+            for (let i = 0; i < serialized_original.length; i++) {
+                highlighted_original.push(serialized_original[i].innerText);
+            }
+            document.getElementById('inputOriginalReview').value = highlighted_original
+
+            var serialized_comparative = hltr_comparative.getHighlights()
+            let highlighted_comparative = []
+            for (let i = 0; i < serialized_comparative.length; i++) {
+                highlighted_comparative.push(serialized_comparative[i].innerText);
+            }
+            document.getElementById('inputComparativeReview').value = highlighted_comparative
+
+            if (serialized_original.length === 0 || serialized_comparative.length === 0) {
+                e.preventDefault();
+                errorBox.innerHTML = '<crowd-alert type="error" dismissible>You must highlight texts that indicate either authentic or deceptive reviews before submitting the work.</crowd-alert>';
+                errorBox.scrollIntoView();
+                return;
+            }
+        };
+    </script>
+</body>
+
+</html>

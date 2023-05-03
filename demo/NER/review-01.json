@@ -1,0 +1,143 @@
+{
+  "text": "We loved the location of this hotel! The rooftop lounge gave us the perfect view of the Seattle Space Needle. It is also a short drive away from pike place market and the waterfront.\nFood was only available via room service, which was a little disappointing but makes sense in this post-pandemic world.\nOverall, a reasonably priced experience.",
+  "entityLabels": [
+    {
+      "name": "positive",
+      "category": "sentiment"
+    },
+    {
+      "name": "neutral",
+      "category": "sentiment"
+    },
+    {
+      "name": "negative",
+      "category": "sentiment"
+    },
+    {
+      "name": "location",
+      "category": "facilities"
+    },
+    {
+      "name": "price",
+      "category": "facilities"
+    },
+    {
+      "name": "staff",
+      "category": "facilities"
+    },
+    {
+      "name": "gym/spa",
+      "category": "facilities"
+    },
+    {
+      "name": "restaurant",
+      "category": "facilities"
+    },
+    {
+      "name": "bar",
+      "category": "facilities"
+    },
+    {
+      "name": "hotel",
+      "category": "facilities"
+    },
+    {
+      "name": "pool",
+      "category": "facilities"
+    },
+    {
+      "name": "lobby",
+      "category": "facilities"
+    },
+    {
+      "name": "rooftop",
+      "category": "facilities"
+    },
+    {
+      "name": "attractions",
+      "category": "facilities"
+    },
+    {
+      "name": "breakfast",
+      "category": "food"
+    },
+    {
+      "name": "lunch",
+      "category": "food"
+    },
+    {
+      "name": "dinner",
+      "category": "food"
+    },
+    {
+      "name": "drinks",
+      "category": "food"
+    },
+    {
+      "name": "cafe",
+      "category": "food"
+    },
+    {
+      "name": "general",
+      "category": "room"
+    },
+    {
+      "name": "refrigerator",
+      "category": "room"
+    },
+    {
+      "name": "bathroom",
+      "category": "room"
+    },
+    {
+      "name": "bed",
+      "category": "room"
+    },
+    {
+      "name": "room service",
+      "category": "room"
+    },
+    {
+      "name": "coffeemaker",
+      "category": "room"
+    },
+    {
+      "name": "outdoors",
+      "category": "room"
+    }
+  ],
+  "relationshipLabels": [
+    {
+      "name": "sentiment",
+      "allowedRelationships": [
+        {
+          "sourceEntityLabelCategories": ["room", "facilities", "food"],
+          "targetEntityLabelCategories": ["sentiment"]
+        }
+      ]
+    },
+    {
+      "name": "coreference",
+      "allowedRelationships": [
+        {
+          "sourceEntityLabelCategories": ["room"],
+          "targetEntityLabelCategories": ["room"]
+        },
+        {
+          "sourceEntityLabelCategories": ["facilities"],
+          "targetEntityLabelCategories": ["facilities"]
+        },
+        {
+          "sourceEntityLabelCategories": ["food"],
+          "targetEntityLabelCategories": ["food"]
+        },
+        {
+          "sourceEntityLabelCategories": ["sentiment"],
+          "targetEntityLabelCategories": ["sentiment"]
+        }
+      ]
+    }
+  ],
+  "entityAnnotations": [],
+  "relationshipAnnotations": []
+}

@@ -1,0 +1,276 @@
+{
+    "text": "This hotel is tucked away from the hustle and bustle of the city and almost feels like a paradise. The garden is beautiful and has picnic tables to enjoy our breakfast outside ❤️ \nThe staff were sweet and very helpful. The only critique I have is that the lighting in our room was too dim.",
+    "entityLabels": [
+        {
+          "name": "positive",
+          "category": "sentiment"
+        },
+        {
+          "name": "neutral",
+          "category": "sentiment"
+        },
+        {
+          "name": "negative",
+          "category": "sentiment"
+        },
+        {
+          "name": "location",
+          "category": "facilities"
+        },
+        {
+          "name": "price",
+          "category": "facilities"
+        },
+        {
+          "name": "staff",
+          "category": "facilities"
+        },
+        {
+          "name": "gym/spa",
+          "category": "facilities"
+        },
+        {
+          "name": "restaurant",
+          "category": "facilities"
+        },
+        {
+          "name": "bar",
+          "category": "facilities"
+        },
+        {
+          "name": "hotel",
+          "category": "facilities"
+        },
+        {
+          "name": "pool",
+          "category": "facilities"
+        },
+        {
+          "name": "lobby",
+          "category": "facilities"
+        },
+        {
+          "name": "rooftop",
+          "category": "facilities"
+        },
+        {
+          "name": "attractions",
+          "category": "facilities"
+        },
+        {
+          "name": "breakfast",
+          "category": "food"
+        },
+        {
+          "name": "lunch",
+          "category": "food"
+        },
+        {
+          "name": "dinner",
+          "category": "food"
+        },
+        {
+          "name": "drinks",
+          "category": "food"
+        },
+        {
+          "name": "cafe",
+          "category": "food"
+        },
+        {
+          "name": "general",
+          "category": "room"
+        },
+        {
+          "name": "refrigerator",
+          "category": "room"
+        },
+        {
+          "name": "bathroom",
+          "category": "room"
+        },
+        {
+          "name": "bed",
+          "category": "room"
+        },
+        {
+          "name": "room service",
+          "category": "room"
+        },
+        {
+          "name": "coffeemaker",
+          "category": "room"
+        },
+        {
+            "name": "outdoors",
+            "category": "room"
+        }
+      ],
+      "relationshipLabels": [
+        {
+          "name": "sentiment",
+          "allowedRelationships": [
+            {
+              "sourceEntityLabelCategories": ["room", "facilities", "food"],
+              "targetEntityLabelCategories": ["sentiment"]
+            }
+          ]
+        },
+        {
+          "name": "coreference",
+          "allowedRelationships": [
+            {
+              "sourceEntityLabelCategories": ["room"],
+              "targetEntityLabelCategories": ["room"]
+            },
+            {
+              "sourceEntityLabelCategories": ["facilities"],
+              "targetEntityLabelCategories": ["facilities"]
+            },
+            {
+              "sourceEntityLabelCategories": ["food"],
+              "targetEntityLabelCategories": ["food"]
+            },
+            {
+              "sourceEntityLabelCategories": ["sentiment"],
+              "targetEntityLabelCategories": ["sentiment"]
+            }
+          ]
+        }
+      ],
+      "entityAnnotations": [
+        {
+          "end": 10,
+          "id": "entity-annotation-765161327272-35",
+          "label": "hotel",
+          "labelCategory": "facilities",
+          "start": 5,
+          "text": "hotel"
+        },
+        {
+          "end": 97,
+          "id": "entity-annotation-765161327272-36",
+          "label": "positive",
+          "labelCategory": "sentiment",
+          "start": 89,
+          "text": "paradise"
+        },
+        {
+          "end": 109,
+          "id": "entity-annotation-765161327272-37",
+          "label": "outdoors",
+          "labelCategory": "room",
+          "start": 103,
+          "text": "garden"
+        },
+        {
+          "end": 122,
+          "id": "entity-annotation-765161327272-38",
+          "label": "positive",
+          "labelCategory": "sentiment",
+          "start": 113,
+          "text": "beautiful"
+        },
+        {
+          "end": 153,
+          "id": "entity-annotation-765161327272-39",
+          "label": "positive",
+          "labelCategory": "sentiment",
+          "start": 148,
+          "text": "enjoy"
+        },
+        {
+          "end": 167,
+          "id": "entity-annotation-765161327272-40",
+          "label": "breakfast",
+          "labelCategory": "food",
+          "start": 158,
+          "text": "breakfast"
+        },
+        {
+          "end": 177,
+          "id": "entity-annotation-765161327272-41",
+          "label": "positive",
+          "labelCategory": "sentiment",
+          "start": 176,
+          "text": "❤️"
+        },
+        {
+          "end": 188,
+          "id": "entity-annotation-765161327272-46",
+          "label": "staff",
+          "labelCategory": "facilities",
+          "start": 183,
+          "text": "staff"
+        },
+        {
+          "end": 199,
+          "id": "entity-annotation-765161327272-47",
+          "label": "positive",
+          "labelCategory": "sentiment",
+          "start": 194,
+          "text": "sweet"
+        },
+        {
+          "end": 216,
+          "id": "entity-annotation-765161327272-48",
+          "label": "positive",
+          "labelCategory": "sentiment",
+          "start": 209,
+          "text": "helpful"
+        },
+        {
+          "end": 263,
+          "id": "entity-annotation-765161327272-51",
+          "label": "general",
+          "labelCategory": "room",
+          "start": 255,
+          "text": "lighting"
+        },
+        {
+          "end": 287,
+          "id": "entity-annotation-765161327272-52",
+          "label": "negative",
+          "labelCategory": "sentiment",
+          "start": 280,
+          "text": "too dim"
+        }
+      ],
+      "relationshipAnnotations": [
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-765161327272-40",
+          "targetEntityAnnotationId": "entity-annotation-765161327272-41"
+        },
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-765161327272-40",
+          "targetEntityAnnotationId": "entity-annotation-765161327272-39"
+        },
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-765161327272-37",
+          "targetEntityAnnotationId": "entity-annotation-765161327272-38"
+        },
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-765161327272-35",
+          "targetEntityAnnotationId": "entity-annotation-765161327272-36"
+        },
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-765161327272-46",
+          "targetEntityAnnotationId": "entity-annotation-765161327272-47"
+        },
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-765161327272-46",
+          "targetEntityAnnotationId": "entity-annotation-765161327272-48"
+        },
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-765161327272-51",
+          "targetEntityAnnotationId": "entity-annotation-765161327272-52"
+        }
+      ]
+  }

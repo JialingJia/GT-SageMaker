@@ -1,0 +1,639 @@
+{
+    "classificationAnnotations": [
+    ],
+    "classificationLabels": [
+    ],
+    "entityAnnotations": [
+      {
+        "end": 8,
+        "id": "entity-annotation-36286624123-36",
+        "label": "positive",
+        "labelCategory": "sentiment",
+        "start": 3,
+        "text": "loved"
+      },
+      {
+        "end": 35,
+        "id": "entity-annotation-36286624123-37",
+        "label": "hotel",
+        "labelCategory": "facilities",
+        "start": 30,
+        "text": "hotel"
+      },
+      {
+        "end": 48,
+        "id": "entity-annotation-36286624123-39",
+        "label": "rooftop",
+        "labelCategory": "facilities",
+        "start": 41,
+        "text": "rooftop"
+      },
+      {
+        "end": 75,
+        "id": "entity-annotation-36286624123-40",
+        "label": "positive",
+        "labelCategory": "sentiment",
+        "start": 68,
+        "text": "perfect"
+      },
+      {
+        "end": 96,
+        "id": "entity-annotation-36286624123-41",
+        "label": "attractions",
+        "labelCategory": "facilities",
+        "start": 84,
+        "text": "space needle"
+      },
+      {
+        "end": 122,
+        "id": "entity-annotation-36286624123-42",
+        "label": "positive",
+        "labelCategory": "sentiment",
+        "start": 111,
+        "text": "short drive"
+      },
+      {
+        "end": 150,
+        "id": "entity-annotation-36286624123-43",
+        "label": "attractions",
+        "labelCategory": "facilities",
+        "start": 133,
+        "text": "pike place market"
+      },
+      {
+        "end": 169,
+        "id": "entity-annotation-36286624123-44",
+        "label": "attractions",
+        "labelCategory": "facilities",
+        "start": 159,
+        "text": "waterfront"
+      },
+      {
+        "end": 211,
+        "id": "entity-annotation-36286624123-49",
+        "label": "room service",
+        "labelCategory": "room",
+        "start": 199,
+        "text": "room service"
+      },
+      {
+        "end": 245,
+        "id": "entity-annotation-36286624123-50",
+        "label": "negative",
+        "labelCategory": "sentiment",
+        "start": 232,
+        "text": "disappointing"
+      },
+      {
+        "end": 312,
+        "id": "entity-annotation-36286624123-52",
+        "label": "positive",
+        "labelCategory": "sentiment",
+        "start": 302,
+        "text": "reasonably"
+      },
+      {
+        "end": 319,
+        "id": "entity-annotation-36286624123-53",
+        "label": "price",
+        "labelCategory": "facilities",
+        "start": 313,
+        "text": "priced"
+      }
+    ],
+    "entityLabels": [
+      {
+        "category": "sentiment",
+        "name": "positive"
+      },
+      {
+        "category": "sentiment",
+        "name": "neutral"
+      },
+      {
+        "category": "sentiment",
+        "name": "negative"
+      },
+      {
+        "category": "facilities",
+        "name": "location"
+      },
+      {
+        "category": "facilities",
+        "name": "price"
+      },
+      {
+        "category": "facilities",
+        "name": "staff"
+      },
+      {
+        "category": "facilities",
+        "name": "gym/spa"
+      },
+      {
+        "category": "facilities",
+        "name": "restaurant"
+      },
+      {
+        "category": "facilities",
+        "name": "bar"
+      },
+      {
+        "category": "facilities",
+        "name": "hotel"
+      },
+      {
+        "category": "facilities",
+        "name": "pool"
+      },
+      {
+        "category": "facilities",
+        "name": "lobby"
+      },
+      {
+        "category": "facilities",
+        "name": "rooftop"
+      },
+      {
+        "category": "facilities",
+        "name": "attractions"
+      },
+      {
+        "category": "food",
+        "name": "breakfast"
+      },
+      {
+        "category": "food",
+        "name": "lunch"
+      },
+      {
+        "category": "food",
+        "name": "dinner"
+      },
+      {
+        "category": "food",
+        "name": "drinks"
+      },
+      {
+        "category": "food",
+        "name": "cafe"
+      },
+      {
+        "category": "room",
+        "name": "general"
+      },
+      {
+        "category": "room",
+        "name": "refrigerator"
+      },
+      {
+        "category": "room",
+        "name": "bathroom"
+      },
+      {
+        "category": "room",
+        "name": "bed"
+      },
+      {
+        "category": "room",
+        "name": "room service"
+      },
+      {
+        "category": "room",
+        "name": "coffeemaker"
+      },
+      {
+        "category": "room",
+        "name": "outdoors"
+      }
+    ],
+    "meta": {
+      "rejected": false,
+      "rejectedReason": "",
+      "runes": [
+        "W",
+        "e",
+        " ",
+        "l",
+        "o",
+        "v",
+        "e",
+        "d",
+        " ",
+        "t",
+        "h",
+        "e",
+        " ",
+        "l",
+        "o",
+        "c",
+        "a",
+        "t",
+        "i",
+        "o",
+        "n",
+        " ",
+        "o",
+        "f",
+        " ",
+        "t",
+        "h",
+        "i",
+        "s",
+        " ",
+        "h",
+        "o",
+        "t",
+        "e",
+        "l",
+        "!",
+        " ",
+        "T",
+        "h",
+        "e",
+        " ",
+        "r",
+        "o",
+        "o",
+        "f",
+        "t",
+        "o",
+        "p",
+        " ",
+        "l",
+        "o",
+        "u",
+        "n",
+        "g",
+        "e",
+        " ",
+        "g",
+        "a",
+        "v",
+        "e",
+        " ",
+        "u",
+        "s",
+        " ",
+        "t",
+        "h",
+        "e",
+        " ",
+        "p",
+        "e",
+        "r",
+        "f",
+        "e",
+        "c",
+        "t",
+        " ",
+        "v",
+        "i",
+        "e",
+        "w",
+        " ",
+        "o",
+        "f",
+        " ",
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        " ",
+        "n",
+        "e",
+        "e",
+        "d",
+        "l",
+        "e",
+        ".",
+        " ",
+        "I",
+        "t",
+        " ",
+        "i",
+        "s",
+        " ",
+        "a",
+        "l",
+        "s",
+        "o",
+        " ",
+        "a",
+        " ",
+        "s",
+        "h",
+        "o",
+        "r",
+        "t",
+        " ",
+        "d",
+        "r",
+        "i",
+        "v",
+        "e",
+        " ",
+        "a",
+        "w",
+        "a",
+        "y",
+        " ",
+        "f",
+        "r",
+        "o",
+        "m",
+        " ",
+        "p",
+        "i",
+        "k",
+        "e",
+        " ",
+        "p",
+        "l",
+        "a",
+        "c",
+        "e",
+        " ",
+        "m",
+        "a",
+        "r",
+        "k",
+        "e",
+        "t",
+        " ",
+        "a",
+        "n",
+        "d",
+        " ",
+        "t",
+        "h",
+        "e",
+        " ",
+        "w",
+        "a",
+        "t",
+        "e",
+        "r",
+        "f",
+        "r",
+        "o",
+        "n",
+        "t",
+        ".",
+        "\n",
+        "F",
+        "o",
+        "o",
+        "d",
+        " ",
+        "w",
+        "a",
+        "s",
+        " ",
+        "o",
+        "n",
+        "l",
+        "y",
+        " ",
+        "a",
+        "v",
+        "a",
+        "i",
+        "l",
+        "a",
+        "b",
+        "l",
+        "e",
+        " ",
+        "v",
+        "i",
+        "a",
+        " ",
+        "r",
+        "o",
+        "o",
+        "m",
+        " ",
+        "s",
+        "e",
+        "r",
+        "v",
+        "i",
+        "c",
+        "e",
+        ",",
+        " ",
+        "w",
+        "h",
+        "i",
+        "c",
+        "h",
+        " ",
+        "w",
+        "a",
+        "s",
+        " ",
+        "a",
+        " ",
+        "l",
+        "i",
+        "t",
+        "t",
+        "l",
+        "e",
+        " ",
+        "d",
+        "i",
+        "s",
+        "a",
+        "p",
+        "p",
+        "o",
+        "i",
+        "n",
+        "t",
+        "i",
+        "n",
+        "g",
+        " ",
+        "b",
+        "u",
+        "t",
+        " ",
+        "m",
+        "a",
+        "k",
+        "e",
+        "s",
+        " ",
+        "s",
+        "e",
+        "n",
+        "s",
+        "e",
+        " ",
+        "i",
+        "n",
+        " ",
+        "t",
+        "h",
+        "i",
+        "s",
+        " ",
+        "p",
+        "o",
+        "s",
+        "t",
+        "-",
+        "p",
+        "a",
+        "n",
+        "d",
+        "e",
+        "m",
+        "i",
+        "c",
+        " ",
+        "w",
+        "o",
+        "r",
+        "l",
+        "d",
+        ".",
+        "\n",
+        "O",
+        "v",
+        "e",
+        "r",
+        "a",
+        "l",
+        "l",
+        ",",
+        " ",
+        "a",
+        " ",
+        "r",
+        "e",
+        "a",
+        "s",
+        "o",
+        "n",
+        "a",
+        "b",
+        "l",
+        "y",
+        " ",
+        "p",
+        "r",
+        "i",
+        "c",
+        "e",
+        "d",
+        " ",
+        "e",
+        "x",
+        "p",
+        "e",
+        "r",
+        "i",
+        "e",
+        "n",
+        "c",
+        "e",
+        "."
+      ]
+    },
+    "relationshipAnnotations": [
+      {
+        "label": "sentiment",
+        "sourceEntityAnnotationId": "entity-annotation-36286624123-37",
+        "targetEntityAnnotationId": "entity-annotation-36286624123-36"
+      },
+      {
+        "label": "sentiment",
+        "sourceEntityAnnotationId": "entity-annotation-36286624123-41",
+        "targetEntityAnnotationId": "entity-annotation-36286624123-40"
+      },
+      {
+        "label": "sentiment",
+        "sourceEntityAnnotationId": "entity-annotation-36286624123-39",
+        "targetEntityAnnotationId": "entity-annotation-36286624123-40"
+      },
+      {
+        "label": "sentiment",
+        "sourceEntityAnnotationId": "entity-annotation-36286624123-43",
+        "targetEntityAnnotationId": "entity-annotation-36286624123-42"
+      },
+      {
+        "label": "sentiment",
+        "sourceEntityAnnotationId": "entity-annotation-36286624123-44",
+        "targetEntityAnnotationId": "entity-annotation-36286624123-42"
+      },
+      {
+        "label": "sentiment",
+        "sourceEntityAnnotationId": "entity-annotation-36286624123-49",
+        "targetEntityAnnotationId": "entity-annotation-36286624123-50"
+      },
+      {
+        "label": "sentiment",
+        "sourceEntityAnnotationId": "entity-annotation-36286624123-53",
+        "targetEntityAnnotationId": "entity-annotation-36286624123-52"
+      }
+    ],
+    "relationshipLabels": [
+      {
+        "allowedRelationships": [
+          {
+            "sourceEntityLabelCategories": [
+              "room",
+              "facilities",
+              "food"
+            ],
+            "targetEntityLabelCategories": [
+              "sentiment"
+            ]
+          }
+        ],
+        "name": "sentiment"
+      },
+      {
+        "allowedRelationships": [
+          {
+            "sourceEntityLabelCategories": [
+              "room"
+            ],
+            "targetEntityLabelCategories": [
+              "room"
+            ]
+          },
+          {
+            "sourceEntityLabelCategories": [
+              "facilities"
+            ],
+            "targetEntityLabelCategories": [
+              "facilities"
+            ]
+          },
+          {
+            "sourceEntityLabelCategories": [
+              "food"
+            ],
+            "targetEntityLabelCategories": [
+              "food"
+            ]
+          },
+          {
+            "sourceEntityLabelCategories": [
+              "sentiment"
+            ],
+            "targetEntityLabelCategories": [
+              "sentiment"
+            ]
+          }
+        ],
+        "name": "coreference"
+      }
+    ],
+    "text": "We loved the location of this hotel! The rooftop lounge gave us the perfect view of space needle. It is also a short drive away from pike place market and the waterfront.\nFood was only available via room service, which was a little disappointing but makes sense in this post-pandemic world.\nOverall, a reasonably priced experience."
+  }

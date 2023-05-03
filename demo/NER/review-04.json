@@ -1,0 +1,276 @@
+{
+    "text": "The best thing about this hotel is undoubtedly its dinner buffet spread. My fiancé loved her Indian Tandoori Chicken while I scarfed down the Greek Stuffed Grape Leaves.\nThe couple's spa appointment was soothing and left us feeling refreshed. The masseuse was friendly and checked if we were comfortable with the pressure levels.\nThe stay was a little expensive but it cannot be helped given the brand and the location.",
+    "entityLabels": [
+        {
+          "name": "positive",
+          "category": "sentiment"
+        },
+        {
+          "name": "neutral",
+          "category": "sentiment"
+        },
+        {
+          "name": "negative",
+          "category": "sentiment"
+        },
+        {
+          "name": "location",
+          "category": "facilities"
+        },
+        {
+          "name": "price",
+          "category": "facilities"
+        },
+        {
+          "name": "staff",
+          "category": "facilities"
+        },
+        {
+          "name": "gym/spa",
+          "category": "facilities"
+        },
+        {
+          "name": "restaurant",
+          "category": "facilities"
+        },
+        {
+          "name": "bar",
+          "category": "facilities"
+        },
+        {
+          "name": "hotel",
+          "category": "facilities"
+        },
+        {
+          "name": "pool",
+          "category": "facilities"
+        },
+        {
+          "name": "lobby",
+          "category": "facilities"
+        },
+        {
+          "name": "rooftop",
+          "category": "facilities"
+        },
+        {
+          "name": "attractions",
+          "category": "facilities"
+        },
+        {
+          "name": "breakfast",
+          "category": "food"
+        },
+        {
+          "name": "lunch",
+          "category": "food"
+        },
+        {
+          "name": "dinner",
+          "category": "food"
+        },
+        {
+          "name": "drinks",
+          "category": "food"
+        },
+        {
+          "name": "cafe",
+          "category": "food"
+        },
+        {
+          "name": "general",
+          "category": "room"
+        },
+        {
+          "name": "refrigerator",
+          "category": "room"
+        },
+        {
+          "name": "bathroom",
+          "category": "room"
+        },
+        {
+          "name": "bed",
+          "category": "room"
+        },
+        {
+          "name": "room service",
+          "category": "room"
+        },
+        {
+          "name": "coffeemaker",
+          "category": "room"
+        },
+        {
+            "name": "outdoors",
+            "category": "room"
+        }
+      ],
+      "relationshipLabels": [
+        {
+          "name": "sentiment",
+          "allowedRelationships": [
+            {
+              "sourceEntityLabelCategories": ["room", "facilities", "food"],
+              "targetEntityLabelCategories": ["sentiment"]
+            }
+          ]
+        },
+        {
+          "name": "coreference",
+          "allowedRelationships": [
+            {
+              "sourceEntityLabelCategories": ["room"],
+              "targetEntityLabelCategories": ["room"]
+            },
+            {
+              "sourceEntityLabelCategories": ["facilities"],
+              "targetEntityLabelCategories": ["facilities"]
+            },
+            {
+              "sourceEntityLabelCategories": ["food"],
+              "targetEntityLabelCategories": ["food"]
+            },
+            {
+              "sourceEntityLabelCategories": ["sentiment"],
+              "targetEntityLabelCategories": ["sentiment"]
+            }
+          ]
+        }
+      ],
+      "entityAnnotations": [
+        {
+          "end": 72,
+          "id": "entity-annotation-945549798809-35",
+          "label": "dinner",
+          "labelCategory": "food",
+          "start": 0,
+          "text": "The best thing about this hotel is undoubtedly its dinner buffet spread."
+        },
+        {
+          "end": 169,
+          "id": "entity-annotation-945549798809-36",
+          "label": "dinner",
+          "labelCategory": "food",
+          "start": 73,
+          "text": "My fiancé loved her Indian Tandoori Chicken while I scarfed down the Greek Stuffed Grape Leaves."
+        },
+        {
+          "end": 8,
+          "id": "entity-annotation-945549798809-37",
+          "label": "positive",
+          "labelCategory": "sentiment",
+          "start": 4,
+          "text": "best"
+        },
+        {
+          "end": 88,
+          "id": "entity-annotation-945549798809-38",
+          "label": "positive",
+          "labelCategory": "sentiment",
+          "start": 83,
+          "text": "loved"
+        },
+        {
+          "end": 242,
+          "id": "entity-annotation-945549798809-41",
+          "label": "gym/spa",
+          "labelCategory": "facilities",
+          "start": 170,
+          "text": "The couple's spa appointment was soothing and left us feeling refreshed."
+        },
+        {
+          "end": 329,
+          "id": "entity-annotation-945549798809-42",
+          "label": "gym/spa",
+          "labelCategory": "facilities",
+          "start": 243,
+          "text": "The masseuse was friendly and checked if we were comfortable with the pressure levels."
+        },
+        {
+          "end": 268,
+          "id": "entity-annotation-945549798809-43",
+          "label": "positive",
+          "labelCategory": "sentiment",
+          "start": 260,
+          "text": "friendly"
+        },
+        {
+          "end": 211,
+          "id": "entity-annotation-945549798809-44",
+          "label": "positive",
+          "labelCategory": "sentiment",
+          "start": 203,
+          "text": "soothing"
+        },
+        {
+          "end": 241,
+          "id": "entity-annotation-945549798809-45",
+          "label": "positive",
+          "labelCategory": "sentiment",
+          "start": 232,
+          "text": "refreshed"
+        },
+        {
+          "end": 361,
+          "id": "entity-annotation-945549798809-49",
+          "label": "price",
+          "labelCategory": "facilities",
+          "start": 352,
+          "text": "expensive"
+        },
+        {
+          "end": 361,
+          "id": "entity-annotation-945549798809-50",
+          "label": "negative",
+          "labelCategory": "sentiment",
+          "start": 352,
+          "text": "expensive"
+        },
+        {
+          "end": 419,
+          "id": "entity-annotation-945549798809-52",
+          "label": "hotel",
+          "labelCategory": "facilities",
+          "start": 330,
+          "text": "The stay was a little expensive but it cannot be helped given the brand and the location."
+        }
+      ],
+      "relationshipAnnotations": [
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-945549798809-35",
+          "targetEntityAnnotationId": "entity-annotation-945549798809-37"
+        },
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-945549798809-36",
+          "targetEntityAnnotationId": "entity-annotation-945549798809-38"
+        },
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-945549798809-41",
+          "targetEntityAnnotationId": "entity-annotation-945549798809-44"
+        },
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-945549798809-41",
+          "targetEntityAnnotationId": "entity-annotation-945549798809-45"
+        },
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-945549798809-42",
+          "targetEntityAnnotationId": "entity-annotation-945549798809-43"
+        },
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-945549798809-52",
+          "targetEntityAnnotationId": "entity-annotation-945549798809-50"
+        },
+        {
+          "label": "sentiment",
+          "sourceEntityAnnotationId": "entity-annotation-945549798809-49",
+          "targetEntityAnnotationId": "entity-annotation-945549798809-50"
+        }
+      ]
+  }

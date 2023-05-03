@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/text-highlighter/build/TextHighlighter.min.js"></script>
+    <link href="assets/main.css" rel="stylesheet" />
+    <title>highlight_annotation
+    </title>
+</head>
+
+<body>
+    <crowd-form>
+        <div id="errorBox"></div>
+        <full-instructions>
+            <h3>Introduction</h3>
+            <p>Hello~ We are the Information Retrieval Team from the University of Texas at Austin, seeking your help to identify deceptive reviews (i.e., fake comments) from the web. In this study, you will first experience a training session to compare
+                the differences and similarities between deceptive and truthful reviews, then help us to identify unknown reviews. Your learning performance could help us understand how to develop a better human-AI collaborative system to detect deceptive
+                online reviews.</p>
+
+            <h3>Task descriptions</h3>
+            <p>Our tasks contain <b>training sessions</b> and <b>testing sessions</b>. We will first present deceptive and truthful reviews in the training session to let you examine their differences and similarities.</p>
+            <p>In the training session, we need your help to highlight these differences or similarities.</p>
+            <p>In the testing session, we want you to identify unknown reviews, telling us whether they are deceptive or truthful. Both training sessions will take place several times. </p>
+        </full-instructions>
+
+        <short-instructions>
+            <h3>Task descriptions</h3>
+            <p>Hello~ We are the Information Retrieval Team from the University of Texas at Austin, seeking your help to identify deceptive reviews (i.e., fake comments) from the web.</p>
+            <p>Our tasks contain <b>training sessions</b> and <b>testing sessions</b>. We will first present deceptive and truthful reviews in the training session to let you examine their differences and similarities.</p>
+            <p>In the training session, we need your help to highlight these differences or similarities.</p>
+            <p>In the testing session, we want you to identify unknown reviews, telling us whether they are deceptive or truthful. Both training sessions will take place several times. </p>
+            <p>Your learning performance could help us understand how to develop a better human-AI collaborative system to detect deceptive online reviews.</p>
+        </short-instructions>
+
+        <div class="container">
+            <div class="left">
+                <div>
+                    <p>Currently you are in the {{ task.input.phase }} session <b>{{ task.input.progress }}</b>. We present a set of hotel reviews that we already know about their authenticity. For a set of 3 reviews, some of them are written by real users
+                        (
+                        <b>truthful</b>) while the others are not written by real users (<b>deceptive</b>). You task is to:</p>
+                    <ol>
+                        <li>Read the reviews 👇 </li>
+                        <li>Identify which parts of the review that indicate it as <b>truthful</b> OR <b>deceptive</b>, and</li>
+                        <li>Answer questions on the right 👉 </li>
+                    </ol>
+                </div>
+
+                <div>
+                    <crowd-card>
+                        <div class="card">
+                            <p><b>Review A</b></p>
+                            <div class="labels">
+                                <div><b>Hotel: </b> {{ task.input.example-1[2].hotel }}</div>
+                                <div><b>Polarity: </b> {{ task.input.example-1[3].polarity }}</div>
+                                <div><b>Deceptive or not: </b> <span id="originalReviewLabel">{{ task.input.example-1[1].deceptive }}</span></div>
+                            </div>
+                            <p id="originalReview">
+                                {{ task.input.example-1[0].text }}
+                            </p>
+                        </div>
+                    </crowd-card>
+
+                    <div>
+                        <p> 🤔 Given the above review, we find another two reviews that are written in a very similar way, but they are actually <b>{{ task.input.example-2[1].deceptive }}</b>:</p>
+                    </div>
+
+                    <crowd-card>
+                        <div class="card">
+                            <div class="labels">
+                                <div><b>Hotel: </b> {{ task.input.example-2[2].hotel }}</div>
+                                <div><b>Polarity: </b> {{ task.input.example-2[3].polarity }}</div>
+                                <div><b>Deceptive or not: </b> <span id="comparativeReviewLabel">{{ task.input.example-2[1].deceptive }}</span></div>
+                            </div>
+                            <div id="comparativeReview">
+                                <p><b>Review B</b></p>
+                                <p>
+                                    {{ task.input.example-2[0].text }}
+                                </p>
+                                <p><b>Review C</b></p>
+                                <p>
+                                    {{ task.input.example-2[0].text }}
+                                </p>
+                            </div>
+                        </div>
+                    </crowd-card>
+                </div>
+            </div>
+
+            <div class="right">
+                <div>
+                    <p>1️⃣ Compared to the review B and C, please highlight texts in the <b>review A</b> that help you differentiate it as actually <span>{{ task.input.example-1[1].deceptive }}</span>.</p>
+                    <crowd-button id="removeOriginalReview">Remove</crowd-button>
+                    <crowd-input name='originalReview' id="inputOriginalReview" class="crowdInput"></crowd-input>
+                </div>
+
+                <div>
+                    <p>2️⃣ Compared to the review A, please highlight texts in <b>review B and C</b> that help you differentiate them as actually <span>{{ task.input.example-2[1].deceptive }}</span>.</p>
+                    <crowd-button id="removeComparativeReview">Remove</crowd-button>
+                    <crowd-input name='comparativeReview' id="inputComparativeReview" class="crowdInput"></crowd-input>
+                </div>
+                <div>
+                    <p>3️⃣ After reading these reviews, on a scale of 1-10, how confident do you think you are able to identify deceptive and truthful reviews?</p>
+                    <crowd-slider name="howMuchConfident" min="1" max="10" step="1" pin="true" editable required></crowd-slider>
+                    <label>(not confident at all: 1 ~ very confident: 10)</label>
+                </div>
+            </div>
+        </div>
+
+    </crowd-form>
+
+    <script>
+        // customize awsui css
+        function css(element, style) {
+            for (const property in style)
+                element.style[property] = style[property];
+        }
+        document.addEventListener('all-crowd-elements-ready', () => {
+            const footer = document
+                .querySelector('crowd-form')
+                .shadowRoot
+                .querySelector('footer')
+
+            css(footer, {
+                // 'z-index': 100,
+                'position': 'fixed'
+            })
+
+            // console.log(footer)
+        });
+
+        // highlight function
+        var hltr_original = new TextHighlighter(document.getElementById('originalReview'))
+        var hltr_comparative = new TextHighlighter(document.getElementById('comparativeReview'))
+        var removeBtn_original = document.getElementById('removeOriginalReview');
+        var removeBtn_comparative = document.getElementById('removeComparativeReview');
+
+        var original_deceptive_label = document.getElementById('originalReviewLabel')
+        var comparative_deceptive_label = document.getElementById('comparativeReviewLabel')
+
+        if (original_deceptive_label.innerText === 'deceptive') {
+            hltr_original.setColor('lightcoral')
+            hltr_comparative.setColor('lightgreen')
+
+            original_deceptive_label.classList.add('deceptive')
+            comparative_deceptive_label.classList.add('truthful')
+        }
+        if (original_deceptive_label.innerText === 'truthful') {
+            hltr_original.setColor('lightgreen')
+            hltr_comparative.setColor('lightcoral')
+
+            original_deceptive_label.classList.add('truthful')
+            comparative_deceptive_label.classList.add('deceptive')
+        }
+
+        removeBtn_original.addEventListener('click', function() {
+            hltr_original.removeHighlights();
+        });
+
+        removeBtn_comparative.addEventListener('click', function() {
+            hltr_comparative.removeHighlights();
+        });
+
+        document.querySelector('crowd-form').onsubmit = function(e) {
+            var serialized_original = hltr_original.getHighlights()
+            let highlighted_original = []
+            for (let i = 0; i < serialized_original.length; i++) {
+                highlighted_original.push(serialized_original[i].innerText);
+            }
+            document.getElementById('inputOriginalReview').value = highlighted_original
+
+            var serialized_comparative = hltr_comparative.getHighlights()
+            let highlighted_comparative = []
+            for (let i = 0; i < serialized_comparative.length; i++) {
+                highlighted_comparative.push(serialized_comparative[i].innerText);
+            }
+            document.getElementById('inputComparativeReview').value = highlighted_comparative
+
+            if (serialized_original.length === 0 || serialized_comparative.length === 0) {
+                e.preventDefault();
+                errorBox.innerHTML = '<crowd-alert type="error" dismissible>You must highlight texts that indicate either authentic or deceptive reviews before submitting the work.</crowd-alert>';
+                errorBox.scrollIntoView();
+                return;
+            }
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+body {
+    /* display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; */
+    /* overflow: hidden; */
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+crowd-card {
+    width: 100%;
+}
+
+.container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 1280px;
+    padding-bottom: 100px;
+}
+
+.card {
+    margin: 20px;
+}
+
+.card p {
+    font-size: normal;
+    /* line-height: 1.5em; */
+}
+
+.left_title {
+    width: 60%;
+    margin-left: 40px;
+    margin-right: 60px;
+    display: inline-block;
+    /* padding-bottom: 10px; */
+    /* max-height: 300px; */
+}
+
+.left {
+    width: 60%;
+    margin-left: 40px;
+    margin-right: 60px;
+    margin-bottom: 30px;
+    display: inline-block;
+    /* padding-bottom: 10px; */
+    /* max-height: 300px; */
+}
+
+.right {
+    width: 25%;
+    position: absolute;
+    margin-bottom: 30px;
+    display: inline-block;
+    /* z-index: 1; */
+}
+
+.right_absolute {
+    width: 30%;
+    position: absolute;
+    margin-bottom: 30px;
+    display: inline-block;
+    /* z-index: 1; */
+}
+
+crowd-radio-group {
+    margin-top: -10px
+}
+
+.labels {
+    font-size: smaller;
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.labels>div {
+    margin-right: 20px;
+}
+
+.crowdInput {
+    margin-bottom: -30px;
+    visibility: hidden;
+}
+
+label {
+    font-size: smaller;
+}
+
+.truthful {
+    display: inline-block;
+    padding: .1em .1em;
+    background: lightgreen;
+}
+
+.deceptive {
+    display: inline-block;
+    padding: .1em .1em;
+    background: lightcoral;
+}
