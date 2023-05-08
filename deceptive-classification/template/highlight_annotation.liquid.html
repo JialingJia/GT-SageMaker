@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/text-highlighter/build/TextHighlighter.min.js"></script>
-    <link href="assets/main.css" rel="stylesheet" />
-    <title>pure_annotation
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/text-highlighter/build/TextHighlighter.min.js"></script>
+    <link href="../assets/main.css" rel="stylesheet" />
+    <title>highlight_annotation
     </title>
 </head>
 
@@ -38,7 +38,7 @@
         </short-instructions>
 
         <div class="container">
-            <div class="left" id="reviewCard">
+            <div class="left">
                 <div>
                     <p>Currently you are in the training session <b>(1/3)</b>. We present a set of hotel reviews that we already know about their authenticity. For a set of 3 reviews, some of them are written by real users (<b>truthful</b>) while the others
                         are not written by real users (<b>deceptive</b>). You task is to:</p>
@@ -56,7 +56,7 @@
                             <div class="labels">
                                 <div><b>Hotel: </b> James</div>
                                 <div><b>Polarity: </b> Negative</div>
-                                <div><b>Deceptive: </b> Truthful</div>
+                                <div><b>Deceptive or not: </b> <span class="truthful">Truthful</span></div>
                             </div>
                             <p id="originalReview">
                                 In the 100 degree heat of a Chicago summer, it sucks if your air conditioner does not work. After 2 maintenance men attempted to rectify the issue I was offered a portable fan which on low speed sound as if a helicopter was hoovering over my room. I requested
@@ -66,14 +66,20 @@
                                 As for room 1618, I believe I was not the first guest to complain about the air conditioner. What's unfortunate is they continued to place guests into this room. And did not offer any reufunds or perks for my sleepless
                                 night in the sauna! This hotel need a major overhaul!!
                             </p>
+                        </div>
+                    </crowd-card>
 
-                            <div style="margin:20px 0px;"></div>
+                    <div>
+                        <p> 🤔 Given the above review, we find another two reviews that are written in a very similar way, but they are actually <b>Deceptive</b>:</p>
+                    </div>
 
+                    <crowd-card>
+                        <div class="card">
                             <p><b>Review B</b></p>
                             <div class="labels">
                                 <div><b>Hotel: </b> Conrad</div>
                                 <div><b>Polarity: </b> Negative</div>
-                                <div><b>Deceptive: </b> Deceptive</div>
+                                <div><b>Deceptive or not: </b> <span class="deceptive">Deceptive</span></div>
                             </div>
                             <p id="comparativeReview">
                                 I had originally chosen the Conrad Chicago Hotel for its location near shopping centers that were within walking distance. However, I later learned that I had made a poor choice. Upon arrival, the lobby seemed nice and we checked in with the clerk. Although,
@@ -87,14 +93,13 @@
                                 late at night to have it repaired. There were not available rooms left, and being so fed up with this hotel's poor service, we promptly left and checked in at a nearby hotel. I don't recommend the Conrad Chicago to anyone
                                 who wants to enjoy their time.
                             </p>
-
-                            <div style="margin:20px 0px;"></div>
-
+                        </div>
+                        <div class="card">
                             <p><b>Review C</b></p>
                             <div class="labels">
                                 <div><b>Hotel: </b> Knickerbocker</div>
                                 <div><b>Polarity: </b> Negative</div>
-                                <div><b>Deceptive: </b> Deceptive</div>
+                                <div><b>Deceptive or not: </b> <span class="deceptive">Deceptive</span></div>
                             </div>
                             <p>
                                 I went to stay in the Millenium Hotel Chicago. Now, first, being from rural midwest I was surprised at the price in general, but kind of accepted it when I was assured by my cousin(whom I was visiting in Chicago) said it was normal. So I check in, service
@@ -113,12 +118,18 @@
 
             <div class="right">
                 <div>
-                    <p>1️⃣ After reading these reviews, please highlight the parts where you consider as the most likely to be written by real users. </p>
+                    <p>1️⃣ Compared to the review B and C, please highlight texts in the <b>review A</b> that help you differentiate it as actually <span class="truthful">Truthful</span>.</p>
                     <crowd-button id="removeOriginalReview">Remove</crowd-button>
                     <crowd-input name='originalReview' id="inputOriginalReview" class="crowdInput"></crowd-input>
                 </div>
+
                 <div>
-                    <p>2️⃣ On a scale of 1-10, how confident do you think you are able to identify deceptive and truthful reviews?</p>
+                    <p>2️⃣ Compared to the review A, please highlight texts in <b>review B and C</b> that help you differentiate them as actually <span class="deceptive">Deceptive</span>.</p>
+                    <crowd-button id="removeComparativeReview">Remove</crowd-button>
+                    <crowd-input name='comparativeReview' id="inputComparativeReview" class="crowdInput"></crowd-input>
+                </div>
+                <div>
+                    <p>3️⃣ After reading these reviews, on a scale of 1-10, how confident do you think you are able to identify deceptive and truthful reviews?</p>
                     <crowd-slider name="howMuchConfident" min="1" max="10" step="1" pin="true" editable required></crowd-slider>
                     <label>(not confident at all: 1 ~ very confident: 10)</label>
                 </div>
@@ -148,13 +159,21 @@
         });
 
         // highlight function
-        var hltr_original = new TextHighlighter(document.getElementById('reviewCard'))
+        var hltr_original = new TextHighlighter(document.getElementById('originalReview'))
+        var hltr_comparative = new TextHighlighter(document.getElementById('comparativeReview'))
         var removeBtn_original = document.getElementById('removeOriginalReview');
+        var removeBtn_comparative = document.getElementById('removeComparativeReview');
+        // console.log(hltr)
 
         hltr_original.setColor('lightgreen')
+        hltr_comparative.setColor('lightcoral')
 
         removeBtn_original.addEventListener('click', function() {
             hltr_original.removeHighlights();
+        });
+
+        removeBtn_comparative.addEventListener('click', function() {
+            hltr_comparative.removeHighlights();
         });
 
         document.querySelector('crowd-form').onsubmit = function(e) {
@@ -163,8 +182,16 @@
             for (let i = 0; i < serialized_original.length; i++) {
                 highlighted_original.push(serialized_original[i].innerText);
             }
-            document.getElementById('inputOriginalReview').value = highlighted_original;
-            if (serialized_original.length === 0) {
+            document.getElementById('inputOriginalReview').value = highlighted_original
+
+            var serialized_comparative = hltr_comparative.getHighlights()
+            let highlighted_comparative = []
+            for (let i = 0; i < serialized_comparative.length; i++) {
+                highlighted_comparative.push(serialized_comparative[i].innerText);
+            }
+            document.getElementById('inputComparativeReview').value = highlighted_comparative
+
+            if (serialized_original.length === 0 || serialized_comparative.length === 0) {
                 e.preventDefault();
                 errorBox.innerHTML = '<crowd-alert type="error" dismissible>You must highlight texts that indicate either authentic or deceptive reviews before submitting the work.</crowd-alert>';
                 errorBox.scrollIntoView();

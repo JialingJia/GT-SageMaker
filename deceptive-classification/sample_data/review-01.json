@@ -1,5 +1,5 @@
 {
-    "group": "random",
+    "group": "counterfactual",
     "phase": "training",
     "progress": "10-1",
     "example-1": [
@@ -19,6 +19,5 @@
         { "deceptive": "deceptive" },
         { "hotel": "Knickerbocker" },
         { "polarity": "negative" }
-    ],
-    "annotations": []
+    ]
 }

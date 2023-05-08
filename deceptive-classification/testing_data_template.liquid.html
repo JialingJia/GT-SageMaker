@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/text-highlighter/build/TextHighlighter.min.js"></script>
+    <link href="assets/main.css" rel="stylesheet" />
+    <title>testing
+    </title>
+</head>
+
+<body>
+    <crowd-form>
+        <full-instructions>
+            <h3>Introduction</h3>
+            <p>Hello~ We are the Information Retrieval Team from the University of Texas at Austin, seeking your help to identify deceptive reviews (i.e., fake comments) from the web. In this study, you will first experience a training session to compare
+                the differences and similarities between deceptive and truthful reviews, then help us to identify unknown reviews. Your learning performance could help us understand how to develop a better human-AI collaborative system to detect deceptive
+                online reviews.</p>
+
+            <h3>Task descriptions</h3>
+            <p>Our tasks contain <b>training sessions</b> and <b>testing sessions</b>. We will first present deceptive and truthful reviews in the training session to let you examine their differences and similarities.</p>
+            <p>In the training session, we need your help to highlight these differences or similarities.</p>
+            <p>In the testing session, we want you to identify unknown reviews, telling us whether they are deceptive or truthful. Both training sessions will take place several times. </p>
+        </full-instructions>
+
+        <short-instructions>
+            <h3>Task descriptions</h3>
+            <p>Hello~ We are the Information Retrieval Team from the University of Texas at Austin, seeking your help to identify deceptive reviews (i.e., fake comments) from the web.</p>
+            <p>Our tasks contain <b>training sessions</b> and <b>testing sessions</b>. We will first present deceptive and truthful reviews in the training session to let you examine their differences and similarities.</p>
+            <p>In the training session, we need your help to highlight these differences or similarities.</p>
+            <p>In the testing session, we want you to identify unknown reviews, telling us whether they are deceptive or truthful. Both training sessions will take place several times. </p>
+            <p>Your learning performance could help us understand how to develop a better human-AI collaborative system to detect deceptive online reviews.</p>
+        </short-instructions>
+
+        <div class="container">
+            <div class="left">
+                <div>
+                    <p>Currently you are in the {{ task.input.phase }} session <b>{{ task.input.progress }}</b>. To understand how good you have become as an expert detective, your task is to: </p>
+                    <li>Read the reviews 👇 </li>
+                    <li>Identify whether the review is <b>truthful</b> OR <b>deceptive</b>, and</li>
+                    <li>Answer questions on the right 👉 </li>
+                </div>
+            </div>
+            <div class="left">
+                <crowd-card>
+                    <div class="card">
+                        <p><b>Review A</b></p>
+                        <div class="labels">
+                            <div><b>Hotel: </b> {{ task.input.example-1[2].hotel }}</div>
+                            <div><b>Polarity: </b> {{ task.input.example-1[3].polarity }}</div>
+                        </div>
+                        <p>
+                            {{ task.input.example-1[0].text }}
+                        </p>
+                    </div>
+                </crowd-card>
+            </div>
+
+            <div class="right">
+                <p>
+                    1. Whether this review is deceptive or truthful?
+                </p>
+                <crowd-radio-group>
+                    <input type="radio" name="answerForTest1" value="deceptive" required>Deceptive</input>
+                    <input type="radio" name="answerForTest1" value="truthful">Truthful</input>
+                </crowd-radio-group>
+                <p>2. On a scale of 1-10, how confident do you think your answer is correct?</p>
+                <crowd-slider name="howMuchConfidentForAnswer" min="1" max="10" step="1" pin="true" editable required></crowd-slider>
+                <label>(not confident at all: 1 ~ very confident: 10)</label>
+            </div>
+
+            <div class="left">
+                <crowd-card>
+                    <div class="card">
+                        <p><b>Review B</b></p>
+                        <div class="labels">
+                            <div><b>Hotel: </b> {{ task.input.example-2[2].hotel }}</div>
+                            <div><b>Polarity: </b> {{ task.input.example-2[3].polarity }}</div>
+                        </div>
+                        <p>
+                            {{ task.input.example-2[0].text }}
+                        </p>
+                    </div>
+                </crowd-card>
+            </div>
+            <div class="right">
+                <p>
+                    1. Whether this review is deceptive or truthful?
+                </p>
+                <crowd-radio-group required>
+                    <input type="radio" name="answerForTest2" value="deceptive" required>Deceptive</input>
+                    <input type="radio" name="answerForTest2" value="truthful">Truthful</input>
+                </crowd-radio-group required>
+                <p>2. On a scale of 1-10, how confident do you think your answer is correct?</p>
+                <crowd-slider name="howMuchConfidentForAnswer" min="1" max="10" step="1" pin="true" editable required></crowd-slider>
+                <label>(not confident at all: 1 ~ very confident: 10)</label>
+            </div>
+
+            <div class="left">
+                <crowd-card>
+                    <div class="card">
+                        <p><b>Review C</b></p>
+                        <div class="labels">
+                            <div><b>Hotel: </b> {{ task.input.example-3[2].hotel }}</div>
+                            <div><b>Polarity: </b> {{ task.input.example-3[3].polarity }}</div>
+                        </div>
+                        <p>
+                            {{ task.input.example-2[0].text }}
+                        </p>
+                    </div>
+                </crowd-card>
+            </div>
+            <div class="right">
+                <p>
+                    1. Whether this review is deceptive or truthful?
+                </p>
+                <crowd-radio-group>
+                    <input type="radio" name="answerForTest3" value="deceptive" required>Deceptive</input>
+                    <input type="radio" name="answerForTest3" value="truthful">Truthful</input>
+                </crowd-radio-group>
+                <p>2. On a scale of 1-10, how confident do you think your answer is correct?</p>
+                <crowd-slider name="howMuchConfidentForAnswer" min="1" max="10" step="1" pin="true" editable required></crowd-slider>
+                <label>(not confident at all: 1 ~ very confident: 10)</label>
+            </div>
+        </div>
+        </div>
+
+    </crowd-form>
+
+    <script>
+        // customize awsui css
+        function css(element, style) {
+            for (const property in style)
+                element.style[property] = style[property];
+        }
+        document.addEventListener('all-crowd-elements-ready', () => {
+            const footer = document
+                .querySelector('crowd-form')
+                .shadowRoot
+                .querySelector('footer')
+
+            css(footer, {
+                // 'z-index': 100,
+                'position': 'fixed'
+            })
+
+            // console.log(footer)
+        });
+    </script>
+</body>
+
+</html>
